@@ -1,4 +1,4 @@
-<VirtualHost *:80>
+<VirtualHost *:{{ getenv "APACHE_PORT" "/var/www/html" }}>
     DocumentRoot {{ getenv "APACHE_SERVER_ROOT" "/var/www/html" }}
     ServerName {{ getenv "APACHE_SERVER_NAME" "default" }}
     DirectoryIndex /index.php index.php
