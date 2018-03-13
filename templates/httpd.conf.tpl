@@ -1,6 +1,6 @@
 ServerRoot "/etc/apache2"
 
-Listen {{ getenv "APACHE_PORT" "80" }}
+Listen {{ getenv "APACHE_PORT" "8080" }}
 
 LoadModule access_compat_module modules/mod_access_compat.so
 LoadModule alias_module modules/mod_alias.so
