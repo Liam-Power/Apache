@@ -1,4 +1,4 @@
-<VirtualHost *:{{ getenv "APACHE_PORT" "/var/www/html" }}>
+<VirtualHost *:{{ getenv "APACHE_PORT" "80" }}>
     DocumentRoot {{ getenv "APACHE_SERVER_ROOT" "/var/www/html" }}
     ServerName {{ getenv "APACHE_SERVER_NAME" "default" }}
     DirectoryIndex /index.php index.php
@@ -21,5 +21,4 @@
             SetHandler "proxy:fcgi://{{ getenv "APACHE_BACKEND_HOST" "php" }}:{{ getenv "APACHE_BACKEND_PORT" "9000" }}"
         </If>
     </FilesMatch>
-    Include conf/healthz.conf
 </VirtualHost>
