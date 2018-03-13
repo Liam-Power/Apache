@@ -1,4 +1,4 @@
-ServerRoot "/usr/local/apache2"
+ServerRoot "/etc/apache2"
 
 Listen {{ getenv "APACHE_PORT" "80" }}
 
@@ -72,11 +72,11 @@ LogLevel {{ getenv "APACHE_LOG_LEVEL" "warn" }}
 </IfModule>
 
 <IfModule alias_module>
-    ScriptAlias /cgi-bin/ "/usr/local/apache2/cgi-bin/"
+    ScriptAlias /cgi-bin/ "/etc/apache2/cgi-bin/"
 
 </IfModule>
 
-<Directory "/usr/local/apache2/cgi-bin">
+<Directory "/etc/apache2/cgi-bin">
 AllowOverride None
 Options None
 Require all granted
